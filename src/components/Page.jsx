@@ -3,7 +3,9 @@ import Header from './Header'
 export default function Page(props) {
   console.log('Page ', props);
   return (
-    <div className='App'>
+    <div className={
+      props.darkmode ? 'App darkmode' : 'App'
+    }>
       <Header 
         darkmode={props.darkmode} 
         handleDarkMode={props.handleDarkMode}

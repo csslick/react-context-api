@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Page from './components/Page'
+import { Context } from './Context';
 
 function App() {
   const [darkmode, setDarkMode] = useState(false);
@@ -10,10 +11,15 @@ function App() {
   }
 
   return (
-    <Page 
-      darkmode={darkmode} 
-      handleDarkMode={handleDarkMode}
-    />
+    // Context가 하위 컴포넌트들에게 state를 제공
+    <Context.Provider value={
+      { darkmode, handleDarkMode }
+    }>
+      <Page 
+        darkmode={darkmode} 
+        handleDarkMode={handleDarkMode}
+      />
+    </Context.Provider>
   )
 }
 
