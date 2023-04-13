@@ -10,6 +10,9 @@ function App() {
     console.log(darkmode);
   }
 
+  // 환경변수
+  console.log('api_key: ', import.meta.env.VITE_API_KEY);
+
   return (
     // Context가 하위 컴포넌트들에게 state를 제공
     <Context.Provider value={
